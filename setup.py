@@ -9,12 +9,12 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="job-search-automation",
     version="0.1.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Antonela Rakipaj",
+    author_email="nelarakipaj@gmail.com",
     description="AI-powered job search automation",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/job-search-automation",
+    url="https://github.com/n3L22/job-search-automation",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
