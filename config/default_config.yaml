@@ -1,0 +1,118 @@
+# Default configuration for Automated Job Search Assistant
+# Copy this file to config/config.yaml and modify as needed
+
+# General application settings
+app:
+  name: "Automated Job Search Assistant"
+  version: "0.1.0"
+  debug: false
+
+# User settings
+user:
+  # Default minimum match score for recommendations (0-100)
+  min_match_score: 70
+  
+  # Default job boards to search
+  job_boards:
+    - indeed
+    - linkedin
+    - glassdoor
+    - monster
+  
+  # Default application settings
+  application:
+    # Whether to automatically apply to jobs above the match threshold
+    auto_apply: false
+    # Minimum match score for automatic applications (0-100)
+    auto_apply_threshold: 85
+
+# AI settings
+ai:
+  # Whether to use AI-powered features (requires API key)
+  enabled: false
+  # Which provider to use for AI features
+  provider: "openai"
+  # Model to use for API calls (when applicable)
+  model: "gpt-3.5-turbo"
+  # API key (DO NOT fill this in the default config - use config/secrets.yaml instead)
+  api_key: ""
+
+# Job search settings
+job_search:
+  # Default job search location
+  default_location: "Remote"
+  # Default job search radius in miles
+  search_radius: 25
+  # Default number of results to fetch per job board
+  results_per_board: 50
+  # Maximum job listings to store in history
+  max_history: 500
+  # Refresh frequency in hours
+  refresh_frequency: 24
+
+# Browser extension settings
+extension:
+  # Whether to enable browser notifications
+  notifications: true
+  # Whether to show match scores on job listings
+  show_match_scores: true
+  # How often to check for server updates (seconds)
+  server_check_interval: 300
+
+# Scraper settings
+scrapers:
+  # Global scraper settings
+  global:
+    # User agent to use for requests
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    # Timeout for requests in seconds
+    timeout: 30
+    # Delay between requests in seconds
+    request_delay: 2
+    # Maximum retries for failed requests
+    max_retries: 3
+  
+  # Indeed-specific settings
+  indeed:
+    base_url: "https://www.indeed.com"
+    results_per_page: 50
+  
+  # LinkedIn-specific settings
+  linkedin:
+    base_url: "https://www.linkedin.com/jobs"
+    results_per_page: 25
+  
+  # Glassdoor-specific settings
+  glassdoor:
+    base_url: "https://www.glassdoor.com/Job"
+    results_per_page: 30
+  
+  # Monster-specific settings
+  monster:
+    base_url: "https://www.monster.com/jobs"
+    results_per_page: 25
+
+# Application filler settings
+application_filler:
+  # Whether to use AI for enhanced content generation
+  use_ai: false
+  # Maximum length for cover letters (in words)
+  max_cover_letter_length: 400
+  # Maximum length for answers to application questions (in words)
+  max_answer_length: 200
+
+# Resume analyzer settings
+resume_analyzer:
+  # Whether to use AI for enhanced resume analysis
+  use_ai: false
+  # Whether to extract skills from resume automatically
+  auto_extract_skills: true
+  # Whether to suggest resume improvements
+  suggest_improvements: true
+
+# Database settings
+database:
+  # Database type (sqlite, mongodb)
+  type: "sqlite"
+  # Database path/URL
+  path: "instance/jobsearch.db"
